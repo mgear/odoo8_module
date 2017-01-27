@@ -1,0 +1,9 @@
+<openerp>
+    <data>
+        <template id="assets_backend" name="announcement_assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/web_hide_announcement_bar/static/src/js/announcement.js"/>
+            </xpath>
+        </template>
+    </data>
+</openerp>

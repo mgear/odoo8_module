@@ -1,0 +1,26 @@
+.hidden_formview_drop {
+  display: none;
+}
+.hidden_drop_formview_highlight {
+  border: 4px dashed #CCC !important;
+  overflow: hidden;
+  background: rgb(232, 232, 232);
+  min-height: 330px;
+  padding: 16px;
+  min-width: 650px;
+  max-width: 860px;
+  margin: -180px auto 40px auto;
+  display: block;
+}
+.hidden_formview_drop .msg_content {
+  margin: 125px 0px 0px 240px;
+  position: absolute;
+  font-size: xx-large;
+  font-style: italic;
+  color: rgb(190, 190, 190);
+}
+.adjust_sheet {
+  opacity: 0;
+  overflow: hidden;
+  height: 300px;
+}
