@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<openerp>
+	<data>
+		<!--  Lead Form View -->
+		<record model="ir.ui.view" id="crm_case_form_view_leads_inherited">
+			<field name="name">crm.lead.form.inherit</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="crm.crm_case_form_view_leads" />
+			<field name="arch" type="xml">
+				<data>
+					<xpath expr="//field[@name='partner_id']" position="after">
+						<field name="product_name" />
+					</xpath>
+				</data>
+			</field>
+		</record>
+
+		<!--  Lead List View -->
+		<record model="ir.ui.view" id="crm_case_tree_view_leads_inherited">
+			<field name="name">crm.lead.tree.inherit</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="crm.crm_case_tree_view_leads" />
+			<field name="arch" type="xml">
+				<data>
+					<xpath expr="//field[@name='name']" position="after">
+						<field name="product_name" />
+					</xpath>
+				</data>
+			</field>
+		</record>
+
+		<!--  Lead Kanban View -->
+		<record model="ir.ui.view" id="crm_case_kanban_view_leads_inherited">
+			<field name="name">crm.lead.kanban.inherit</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="crm.crm_case_kanban_view_leads" />
+			<field name="arch" type="xml">
+				<data>
+					<xpath expr="templates//t//div//div//field[@name='partner_id']" position="after">
+						<div>
+						<field name="product_name" />
+						</div>
+					</xpath>
+				</data>
+			</field>
+		</record>
+
+		<!--  Lead Search View -->
+		<record model="ir.ui.view" id="view_crm_case_leads_filter_inherited">
+			<field name="name">crm.lead.search.inherit</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="crm.view_crm_case_leads_filter" />
+			<field name="arch" type="xml">
+				<data>
+					<xpath expr="//filter[@string='Customer']" position="after">
+						<filter string="Product" help="Product" domain="[]" context="{'group_by':'product_name'}"/>
+					</xpath>
+				</data>
+			</field>
+		</record>
+
+
+
+		
+		<!-- Opportunities Form View -->
+		<record model="ir.ui.view" id="crm_case_form_view_oppor_inherited">
+			<field name="name">crm.oppor.form.inherit</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
+			<field name="arch" type="xml">
+				<data>
+					<xpath expr="//field[@name='partner_id']" position="after">
+						<field name="product_name" />
+					</xpath>
+				</data>
+			</field>
+		</record>
+
+
+		<!-- Opportunities List View -->
+		<record model="ir.ui.view" id="crm_case_tree_view_oppor_inherited">
+			<field name="name">crm.oppor.tree.inherit</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="crm.crm_case_tree_view_oppor" />
+			<field name="arch" type="xml">
+				<data>
+					<xpath expr="//field[@name='partner_id']" position="after">
+						<field name="product_name" />
+					</xpath>
+				</data>
+			</field>
+		</record>
+
+		<!--  Opportunities Search View -->
+		<record model="ir.ui.view" id="view_crm_case_opportunities_filter_inherited">
+			<field name="name">crm.oppor.search.inherit</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="crm.view_crm_case_opportunities_filter" />
+			<field name="arch" type="xml">
+				<data>
+					<xpath expr="//filter[@string='Salesperson']" position="after">
+						<filter string="Product" help="Product" domain="[]" context="{'group_by':'product_name'}"/>
+					</xpath>
+				</data>
+			</field>
+		</record>
+		
+	</data>
+</openerp>
